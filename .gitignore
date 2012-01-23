@@ -1,0 +1,8 @@
+*.ipr
+*.iws
+*.iml
+target
+.svn
+APDescription.txt
+*~
+*.swp
