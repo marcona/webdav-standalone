@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Class-Path: mime-util-2.1.3.zip slf4j-simple-1.6.1.zip log4j-1.2.16.zi
+ p simple-4.1.21.zip commons-beanutils-1.8.2.zip milton-filesystem-1.6
+ .2-SNAPSHOT.zip commons-io-1.4.zip slf4j-api-1.6.1.zip berry-server-1
+ .5-SNAPSHOT.zip commons-codec-1.4.zip commons-logging-1.1.1.zip commo
+ ns-fileupload-1.2.1.zip milton-api-1.6.2-SNAPSHOT.zip junit-4.8.1.zip
+  slf4j-log4j12-1.6.1.zip jdom-1.1.zip
+Main-Class: com.marc.onnet.BerryServer
+
