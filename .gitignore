@@ -6,3 +6,5 @@ target
 APDescription.txt
 *~
 *.swp
+out
+

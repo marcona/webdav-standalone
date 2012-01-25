@@ -5,5 +5,5 @@ Class-Path: mime-util-2.1.3.zip slf4j-simple-1.6.1.zip log4j-1.2.16.zi
  .5-SNAPSHOT.zip commons-codec-1.4.zip commons-logging-1.1.1.zip commo
  ns-fileupload-1.2.1.zip milton-api-1.6.2-SNAPSHOT.zip junit-4.8.1.zip
   slf4j-log4j12-1.6.1.zip jdom-1.1.zip
-Main-Class: com.marc.onnet.BerryServer
+Main-Class: com.marc.onnet.WebdavStandaloneServer
 

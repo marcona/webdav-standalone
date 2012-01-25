@@ -1,2 +1,13 @@
 
 Test du server Webdav berry/milton compatible W7
+
+-TODO
+ - faire un assembly
+    - deploiement des libs
+    - deploiement d'un ksh et/ou .bat
+ - faire un TR
+ - remplacer chemin en dur dans pom.xml
+
+
+ - plus tard :
+    - gerer les droits
