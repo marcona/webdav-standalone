@@ -15,42 +15,42 @@
             <groupId>berry</groupId>
             <artifactId>berry-server</artifactId>
             <version>1.5-SNAPSHOT</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/berry-server-1.5-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>commons-beanutils</artifactId>
             <version>1.8.2</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/commons-beanutils-1.8.2.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.4</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/commons-codec-1.4.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.2.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/commons-fileupload-1.2.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.4</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/commons-io-1.4.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/commons-logging-1.1.1.jar</systemPath>
         </dependency>
 
@@ -58,21 +58,21 @@
             <groupId>berry</groupId>
             <artifactId>jdom</artifactId>
             <version>1.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/jdom-1.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/junit-4.8.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/log4j-1.2.16.jar</systemPath>
         </dependency>
 
@@ -80,53 +80,53 @@
             <groupId>berry</groupId>
             <artifactId>milton-api</artifactId>
             <version>1.6.2-SNAPSHOT</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-api-1.6.2-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>milton-filesystem</artifactId>
             <version>1.6.2-SNAPSHOT</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-filesystem-1.6.2-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>mime-util</artifactId>
             <version>2.1.3</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/mime-util-2.1.3.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>simple</artifactId>
             <version>4.1.21</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/simple-4.1.21.jar</systemPath>
-        </dependency>						
+        </dependency>
 
         <dependency>
             <groupId>berry</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.6.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/slf4j-api-1.6.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/slf4j-log4j12-1.6.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.6.1</version>
-			<scope>system</scope>
+            <scope>system</scope>
             <systemPath>C:/dev/projects/github/webdav-standalone/lib/slf4j-simple-1.6.1.jar</systemPath>
         </dependency>
-		<!-- -->
+        <!-- -->
     </dependencies>
 
     <name>Standalone Webdav Server</name>
@@ -134,7 +134,43 @@
     <inceptionYear>2012</inceptionYear>
 
     <packaging>jar</packaging>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>windows-1252</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-1</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/src_deps.xml</descriptor>
+                    </descriptors>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.marc.onnet.WebdavStandaloneServer</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <scm>
         <connection>scm:git:https://marcona@github.com/marcona/webdav-standalone.git</connection>
         <developerConnection>scm:git:https://marcona@github.com/marcona/webdav-standalone.git</developerConnection>

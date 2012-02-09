@@ -24,15 +24,22 @@ import java.util.Map;
 public class WebdavStandaloneServer {
     public static void main(String[] args) {
         WebdavStandaloneServer startup = new WebdavStandaloneServer();
+        String defaultContextPath = "/";
+
         if (args.length == 1) {
             File rootPath = new File(args[0]);
             if (rootPath.exists()) {
-                startup.start("/", 80, args[0]);
+                startup.start(defaultContextPath, 80, args[0]);
             }
         }
+        else if (args.length == 2) {
+            startup.start(defaultContextPath, Integer.parseInt(args[1]), args[0]);
+        }
         else {
+
             String msg = "Le nombre d'arguments passe est faux:"
-                         + " exemple de ligne de commande : java -jar webdav-standalone-1.0.jar \"path\\to\\share\"";
+                         + " exemple de ligne de commande : \n\tjava -jar webdav-standalone-1.0.jar \"path\\to\\share\""
+                         + "\n\tjava -jar webdav-standalone-1.0.jar \"path\\to\\share\" 8080";
             throw new IllegalArgumentException(msg);
         }
     }
@@ -45,9 +52,8 @@ public class WebdavStandaloneServer {
     public void start(String contextPath, int port, String fileSystemRootPath) {
 
         FileSystemResourceFactory fileSystemResourceFactory
-              = new FileSystemResourceFactory(new File(fileSystemRootPath),
-                                              getSecurityManager(),
-                                              contextPath);
+              = new FileSystemResourceFactory(new File(fileSystemRootPath), getSecurityManager(), contextPath);
+
         fileSystemResourceFactory.setLockManager(new FsMemoryLockManager());
 
         HttpManager httpManager = new HttpManager(fileSystemResourceFactory);
