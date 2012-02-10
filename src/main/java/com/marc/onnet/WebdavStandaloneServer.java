@@ -25,16 +25,18 @@ public class WebdavStandaloneServer {
     public static void main(String[] args) {
         WebdavStandaloneServer startup = new WebdavStandaloneServer();
         String defaultContextPath = "/";
+        int defaultPort = 80;
 
-        if (args.length == 1) {
+        if (args.length > 0 && args.length <= 2) {
             File rootPath = new File(args[0]);
             if (rootPath.exists()) {
-                startup.start(defaultContextPath, 80, args[0]);
+                if (args.length == 2) {
+                    defaultPort = Integer.parseInt(args[1]);
+                }
+                startup.start(defaultContextPath, defaultPort, args[0]);
             }
         }
-        else if (args.length == 2) {
-            startup.start(defaultContextPath, Integer.parseInt(args[1]), args[0]);
-        }
+
         else {
 
             String msg = "Le nombre d'arguments passe est faux:"
