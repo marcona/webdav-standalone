@@ -79,16 +79,16 @@
         <dependency>
             <groupId>berry</groupId>
             <artifactId>milton-api</artifactId>
-            <version>1.6.2-SNAPSHOT</version>
+            <version>1.7.0</version>
             <scope>system</scope>
-            <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-api-1.6.2-SNAPSHOT.jar</systemPath>
+            <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-api-1.7.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>
             <artifactId>milton-filesystem</artifactId>
-            <version>1.6.2-SNAPSHOT</version>
+            <version>1.7.0</version>
             <scope>system</scope>
-            <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-filesystem-1.6.2-SNAPSHOT.jar</systemPath>
+            <systemPath>C:/dev/projects/github/webdav-standalone/lib/milton-filesystem-1.7.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>berry</groupId>

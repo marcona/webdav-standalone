@@ -24,7 +24,7 @@ import java.util.Map;
 public class WebdavStandaloneServer {
     public static void main(String[] args) {
         WebdavStandaloneServer startup = new WebdavStandaloneServer();
-        String defaultContextPath = "/";
+        String defaultContextPath = "arno";
         int defaultPort = 80;
 
         if (args.length > 0 && args.length <= 2) {
@@ -55,6 +55,14 @@ public class WebdavStandaloneServer {
 
         FileSystemResourceFactory fileSystemResourceFactory
               = new FileSystemResourceFactory(new File(fileSystemRootPath), getSecurityManager(), contextPath);
+        System.out
+              .println("fileSystemResourceFactory.getDefaultPage() = " + fileSystemResourceFactory.getDefaultPage());
+        System.out
+              .println("fileSystemResourceFactory.getContextPath() = " + fileSystemResourceFactory.getContextPath());
+        System.out
+              .println("fileSystemResourceFactory.getRoot() = " + fileSystemResourceFactory.getRoot().getPath());
+        System.out
+              .println("fileSystemResourceFactory.getSsoPrefix() = " + fileSystemResourceFactory.getResource("localhost","/").getName());
 
         fileSystemResourceFactory.setLockManager(new FsMemoryLockManager());
 
