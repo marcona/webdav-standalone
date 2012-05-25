@@ -38,7 +38,6 @@ public class WebdavStandaloneServer {
         }
 
         else {
-
             String msg = "Le nombre d'arguments passe est faux:"
                          + " exemple de ligne de commande : \n\tjava -jar webdav-standalone-1.0.jar \"path\\to\\share\""
                          + "\n\tjava -jar webdav-standalone-1.0.jar \"path\\to\\share\" 8080";
@@ -56,13 +55,18 @@ public class WebdavStandaloneServer {
         FileSystemResourceFactory fileSystemResourceFactory
               = new FileSystemResourceFactory(new File(fileSystemRootPath), getSecurityManager(), contextPath);
         System.out
-              .println("fileSystemResourceFactory.getDefaultPage() = " + fileSystemResourceFactory.getDefaultPage());
+              .println("DEBUG --> fileSystemResourceFactory.getDefaultPage() = "
+                       + fileSystemResourceFactory.getDefaultPage());
         System.out
-              .println("fileSystemResourceFactory.getContextPath() = " + fileSystemResourceFactory.getContextPath());
+              .println("DEBUG --> fileSystemResourceFactory.getContextPath() = "
+                       + fileSystemResourceFactory.getContextPath());
         System.out
-              .println("fileSystemResourceFactory.getRoot() = " + fileSystemResourceFactory.getRoot().getPath());
+              .println(
+                    "DEBUG --> fileSystemResourceFactory.getRoot() = " + fileSystemResourceFactory.getRoot().getPath());
         System.out
-              .println("fileSystemResourceFactory.getSsoPrefix() = " + fileSystemResourceFactory.getResource("localhost","/").getName());
+              .println("DEBUG --> fileSystemResourceFactory.getSsoPrefix() = " + fileSystemResourceFactory.getResource(
+                    "localhost",
+                    "/").getName());
 
         fileSystemResourceFactory.setLockManager(new FsMemoryLockManager());
 
@@ -80,7 +84,7 @@ public class WebdavStandaloneServer {
 
     private SimpleSecurityManager getSecurityManager() {
         Map<String, String> name = new HashMap<String, String>();
-        name.put("tomcat", "tomcat");
+        name.put("codjo", "codjo");
 
         return new SimpleSecurityManager("admin", name) {
             @Override
